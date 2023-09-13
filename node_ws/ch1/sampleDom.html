@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+                <div id="container"></div>
+                <button class="add">추가</button><button class="print">출력</button>
+        <script>
+            var loadFunc = () => {
+                const elem = document.querySelector('#container');
+                if(elem.hasChildNodes) {
+                    [...elem.children].forEach(el => console.log(el.children));
+                }
+
+                const $add = document.querySelector('#add');
+                const $print = document.querySelector('#print');
+
+                const newdiv = document.createElement('.div');
+                const newinput = document.createElement('input');
+                newdiv.appendChild(newinput);
+
+                const parentElem = document.querySelector('#container');
+                parentElem.appendChild(newDiv);
+            }
+
+             $add.onClick = loadFunc;
+        </script>
+    </body>
+</html>

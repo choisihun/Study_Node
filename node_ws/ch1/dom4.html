@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>
+            <h1>cities</h1>
+            <ul>
+                <li id="one" class="red">Seoul</li>
+                <li id="two" class="red">London</li>
+                <li id="three" class="red">NewYork</li>
+                <li id="four">Tokyo</li>
+            </ul>
+        </div>
+        <script>
+            var loadFunc = () => {
+                const newElem = document.createElement('li');
+                const newText = document.createTextNode('Beijing');
+                newElem.appendChild(newText);
+                const parentElem = document.querySelector('ul');
+                parent.appendChild(newElem);
+            }
+            window.onload=loadFunc;
+        </script>
+    </body>
+</html>
