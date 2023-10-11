@@ -18,31 +18,31 @@ const fs = require("fs").promises;
 //   console.error(error);
 // });
 
-http
-  .createServer(async (req, res) => {
-    if (req.method === "GET") {
-      if (req.url === "/") {
-        res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-        res.write("<h1>Hello Node 81</h1>");
-        res.end("<p>Hello server!</p>");
-      } else if (req.url === "/server2") {
-        try {
-          console.log(req.method);
-          console.log(req.url);
+// http
+//   .createServer(async (req, res) => {
+//     if (req.method === "GET") {
+//       if (req.url === "/") {
+//         res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+//         res.write("<h1>Hello Node 81</h1>");
+//         res.end("<p>Hello server!</p>");
+//       } else if (req.url === "/server2") {
+//         try {
+//           console.log(req.method);
+//           console.log(req.url);
 
-          const data = await fs.readFile("./server.html");
-          res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-          res.end(data);
-        } catch (err) {
-          console.error(err);
-          res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
-          res.end(err.message);
-        }
-      }
-    }
-  })
-  .listen(8080, () => {
-    console.log("8080에서 시작");
-  });
+//           const data = await fs.readFile("./server.html");
+//           res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+//           res.end(data);
+//         } catch (err) {
+//           console.error(err);
+//           res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+//           res.end(err.message);
+//         }
+//       }
+//     }
+//   })
+//   .listen(8080, () => {
+//     console.log("8080에서 시작");
+//   });
 
 
